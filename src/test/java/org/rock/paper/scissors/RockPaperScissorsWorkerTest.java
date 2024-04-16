@@ -12,6 +12,27 @@ public class RockPaperScissorsWorkerTest {
     private final static String TIED = "Match tied!";
 
     @Test
+    public void matchTied() {
+        MockBuilder.setMockSelection("mockedValue", "r");
+
+        String result = getResult("r");
+
+        assertEquals(result, TIED);
+
+        MockBuilder.setMockSelection("mockedValue", "p");
+
+        result = getResult("p");
+
+        assertEquals(result, TIED);
+
+        MockBuilder.setMockSelection("mockedValue", "s");
+
+        result = getResult("s");
+
+        assertEquals(result, TIED);
+    }
+
+    @Test
     public void startRpsWithRockScissorsSelection() {
         MockBuilder.setMockSelection("mockedValue", "r");
 
@@ -45,6 +66,24 @@ public class RockPaperScissorsWorkerTest {
         String result = getResult("p");
 
         assertEquals(result, LOSE);
+    }
+
+    @Test
+    public void startRpsWithPaperRockSelection() {
+        MockBuilder.setMockSelection("mockedValue", "p");
+
+        String result = getResult("r");
+
+        assertEquals(result, LOSE);
+    }
+
+    @Test
+    public void startRpsWithScissorsRockSelection() {
+        MockBuilder.setMockSelection("mockedValue", "s");
+
+        String result = getResult("r");
+
+        assertEquals(result, WIN);
     }
 
     private String getResult(String yourSelection) {
