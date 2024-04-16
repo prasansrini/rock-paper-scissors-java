@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="1" failures="0" name="org.rock.paper.scissors.RockPaperScissorsWorkerTest" time="0.007" errors="0" skipped="0">
+<testsuite tests="8" failures="0" name="org.rock.paper.scissors.RockPaperScissorsWorkerTest" time="0.005" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
     <property name="java.vm.version" value="17.0.10+7-Ubuntu-122.04.1"/>
     <property name="sun.boot.library.path" value="/usr/lib/jvm/java-17-openjdk-amd64/lib"/>
-    <property name="maven.multiModuleProjectDirectory" value="/home/prasanna/Projects/Java/RPS"/>
+    <property name="maven.multiModuleProjectDirectory" value="/home/prasanna/Projects/Java/rock-paper-scissors-java"/>
     <property name="java.vm.vendor" value="Private Build"/>
     <property name="java.vendor.url" value="Unknown"/>
     <property name="guice.disable.misplaced.annotation.check" value="true"/>
@@ -13,7 +13,7 @@
     <property name="user.country" value="US"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
-    <property name="user.dir" value="/home/prasanna/Projects/Java/RPS"/>
+    <property name="user.dir" value="/home/prasanna/Projects/Java/rock-paper-scissors-java"/>
     <property name="java.vm.compressedOopsMode" value="Zero based"/>
     <property name="java.runtime.version" value="17.0.10+7-Ubuntu-122.04.1"/>
     <property name="os.arch" value="amd64"/>
@@ -40,7 +40,7 @@
     <property name="java.class.path" value="/usr/share/maven/boot/plexus-classworlds-2.x.jar"/>
     <property name="java.vm.specification.version" value="17"/>
     <property name="sun.arch.data.model" value="64"/>
-    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher clean install test"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher test"/>
     <property name="java.home" value="/usr/lib/jvm/java-17-openjdk-amd64"/>
     <property name="user.language" value="en"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
@@ -57,5 +57,12 @@
     <property name="sun.cpu.endian" value="little"/>
     <property name="sun.stdout.encoding" value="UTF-8"/>
   </properties>
-  <testcase classname="org.rock.paper.scissors.RockPaperScissorsWorkerTest" name="startRpsWithRockSelection" time="0.007"/>
+  <testcase classname="org.rock.paper.scissors.RockPaperScissorsWorkerTest" name="startRpsWithRockPaperSelection" time="0.004"/>
+  <testcase classname="org.rock.paper.scissors.RockPaperScissorsWorkerTest" name="j" time="0"/>
+  <testcase classname="org.rock.paper.scissors.RockPaperScissorsWorkerTest" name="startRpsWithScissorsRockSelection" time="0"/>
+  <testcase classname="org.rock.paper.scissors.RockPaperScissorsWorkerTest" name="startRpsWithScissorsPaperSelection" time="0"/>
+  <testcase classname="org.rock.paper.scissors.RockPaperScissorsWorkerTest" name="matchTied" time="0"/>
+  <testcase classname="org.rock.paper.scissors.RockPaperScissorsWorkerTest" name="startRpsWithPaperRockSelection" time="0"/>
+  <testcase classname="org.rock.paper.scissors.RockPaperScissorsWorkerTest" name="startRpsWithRockScissorsSelection" time="0.001"/>
+  <testcase classname="org.rock.paper.scissors.RockPaperScissorsWorkerTest" name="startRpsWithPaperScissorsSelection" time="0"/>
 </testsuite>

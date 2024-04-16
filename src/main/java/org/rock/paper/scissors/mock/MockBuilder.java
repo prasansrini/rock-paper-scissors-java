@@ -11,12 +11,16 @@ public final class MockBuilder {
     private MockBuilder() {
     }
 
-    public static String containsGet(String value, String defaultValue) {
-        if (mockSelection.containsKey(value)) {
-            return mockSelection.get(value);
+    public static String containsGet(String key, String defaultValue) {
+        if (mockSelection.containsKey(key)) {
+            return mockSelection.get(key);
         }
 
         return defaultValue;
+    }
+
+    public static boolean contains(String key) {
+        return mockSelection.containsKey(key);
     }
 
     public static void setMockSelection(String key, String value) {

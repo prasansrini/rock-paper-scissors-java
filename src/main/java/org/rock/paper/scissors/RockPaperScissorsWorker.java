@@ -3,13 +3,16 @@ package org.rock.paper.scissors;
 import org.rock.paper.scissors.mock.MockBuilder;
 
 public class RockPaperScissorsWorker {
+    private static final String MOCK_KEY = "mockedValue";
 
     public String startRps(String computerSelection, String yourSelection) {
 
-        String computerTurn = MockBuilder.containsGet("mockedValue", computerSelection);
+        String computerTurn = MockBuilder.containsGet(MOCK_KEY, computerSelection);
 
         if (yourSelection.equals("r") || yourSelection.equals("p") || yourSelection.equals("s")) {
-            System.out.println("Computer's choice : " + computerTurn);
+            if (!MockBuilder.contains(MOCK_KEY)) {
+                System.out.println("Computer's choice : " + computerTurn);
+            }
 
             if (computerTurn.equals(yourSelection)) {
                 return printResult(3);
