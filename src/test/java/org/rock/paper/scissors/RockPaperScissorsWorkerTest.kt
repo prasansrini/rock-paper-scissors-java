@@ -1,93 +1,92 @@
-package org.rock.paper.scissors;
+package org.rock.paper.scissors
 
-import org.junit.Test;
-import org.rock.paper.scissors.mock.MockBuilder;
+import org.junit.Assert
+import org.junit.Test
+import org.rock.paper.scissors.mock.MockBuilder
 
-import static org.junit.Assert.assertEquals;
-
-public class RockPaperScissorsWorkerTest {
-
-    private final static String LOSE = "You lose!";
-    private final static String WIN = "You win!";
-    private final static String TIED = "Match tied!";
-
+class RockPaperScissorsWorkerTest {
     @Test
-    public void matchTied() {
-        MockBuilder.setMockSelection("mockedValue", "r");
+    fun matchTied() {
+        MockBuilder.setMockSelection("mockedValue", "r")
 
-        String result = getResult("r");
+        var result = getResult("r")
 
-        assertEquals(result, TIED);
+        Assert.assertEquals(result, TIED)
 
-        MockBuilder.setMockSelection("mockedValue", "p");
+        MockBuilder.setMockSelection("mockedValue", "p")
 
-        result = getResult("p");
+        result = getResult("p")
 
-        assertEquals(result, TIED);
+        Assert.assertEquals(result, TIED)
 
-        MockBuilder.setMockSelection("mockedValue", "s");
+        MockBuilder.setMockSelection("mockedValue", "s")
 
-        result = getResult("s");
+        result = getResult("s")
 
-        assertEquals(result, TIED);
+        Assert.assertEquals(result, TIED)
     }
 
     @Test
-    public void startRpsWithRockScissorsSelection() {
-        MockBuilder.setMockSelection("mockedValue", "r");
+    fun startRpsWithRockScissorsSelection() {
+        MockBuilder.setMockSelection("mockedValue", "r")
 
-        String result = getResult("s");
+        val result = getResult("s")
 
-        assertEquals(result, LOSE);
+        Assert.assertEquals(result, LOSE)
     }
 
     @Test
-    public void startRpsWithPaperScissorsSelection() {
-        MockBuilder.setMockSelection("mockedValue", "p");
+    fun startRpsWithPaperScissorsSelection() {
+        MockBuilder.setMockSelection("mockedValue", "p")
 
-        String result = getResult("s");
+        val result = getResult("s")
 
-        assertEquals(result, WIN);
+        Assert.assertEquals(result, WIN)
     }
 
     @Test
-    public void startRpsWithRockPaperSelection() {
-        MockBuilder.setMockSelection("mockedValue", "r");
+    fun startRpsWithRockPaperSelection() {
+        MockBuilder.setMockSelection("mockedValue", "r")
 
-        String result = getResult("p");
+        val result = getResult("p")
 
-        assertEquals(result, WIN);
+        Assert.assertEquals(result, WIN)
     }
 
     @Test
-    public void startRpsWithScissorsPaperSelection() {
-        MockBuilder.setMockSelection("mockedValue", "s");
+    fun startRpsWithScissorsPaperSelection() {
+        MockBuilder.setMockSelection("mockedValue", "s")
 
-        String result = getResult("p");
+        val result = getResult("p")
 
-        assertEquals(result, LOSE);
+        Assert.assertEquals(result, LOSE)
     }
 
     @Test
-    public void startRpsWithPaperRockSelection() {
-        MockBuilder.setMockSelection("mockedValue", "p");
+    fun startRpsWithPaperRockSelection() {
+        MockBuilder.setMockSelection("mockedValue", "p")
 
-        String result = getResult("r");
+        val result = getResult("r")
 
-        assertEquals(result, LOSE);
+        Assert.assertEquals(result, LOSE)
     }
 
     @Test
-    public void startRpsWithScissorsRockSelection() {
-        MockBuilder.setMockSelection("mockedValue", "s");
+    fun startRpsWithScissorsRockSelection() {
+        MockBuilder.setMockSelection("mockedValue", "s")
 
-        String result = getResult("r");
+        val result = getResult("r")
 
-        assertEquals(result, WIN);
+        Assert.assertEquals(result, WIN)
     }
 
-    private String getResult(String yourSelection) {
-        RockPaperScissorsWorker worker = new RockPaperScissorsWorker();
-        return worker.startRps(null, yourSelection);
+    private fun getResult(yourSelection: String): String {
+        return RockPaperScissorsWorker().startRps(null, yourSelection)
+    }
+
+    companion object {
+        private const val LOSE = "You lose!"
+        private const val WIN = "You win!"
+        private const val TIED = "Match tied!"
     }
 }
